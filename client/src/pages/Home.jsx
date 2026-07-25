@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   useEffect(() => { load(); }, []);
-  usePolling(load, 8000); // har 8 second mein naye products/categories check karta hai
+  usePolling(load, 8000); // checks for new products/categories every 8 seconds
 
   return (
     <div>
@@ -30,7 +30,7 @@ const Home = () => {
             Signature Scents for the Whole Family
           </h1>
           <p style={{ maxWidth: 480, margin: "0 auto 30px", color: "var(--ivory-deep)" }}>
-            Men, women aur kids ke liye curated perfumes — Pakistan bhar mein Cash on Delivery.
+            Curated perfumes for men, women, and kids — with Cash on Delivery across Pakistan.
           </p>
           <Link to="/shop/women" className="btn btn-gold">Shop the Collection</Link>
         </div>
@@ -39,7 +39,7 @@ const Home = () => {
       <section className="container" style={{ padding: "64px 24px" }}>
         <h2 className="display" style={{ fontSize: 28, marginBottom: 24 }}>Shop by Category</h2>
         {categories.length === 0 ? (
-          <p style={{ color: "var(--grey)" }}>Categories jald hi add ki jayengi.</p>
+          <p style={{ color: "var(--grey)" }}>Categories will be added soon.</p>
         ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 18 }}>
             {categories.map((c) => <CategoryCard key={c._id} category={c} />)}
@@ -50,7 +50,7 @@ const Home = () => {
       <section className="container" style={{ padding: "0 24px 80px" }}>
         <h2 className="display" style={{ fontSize: 28, marginBottom: 24 }}>Latest Arrivals</h2>
         {products.length === 0 ? (
-          <p style={{ color: "var(--grey)" }}>Products jald hi add kiye jayenge.</p>
+          <p style={{ color: "var(--grey)" }}>Products will be added soon.</p>
         ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 18 }}>
             {products.map((p) => <ProductCard key={p._id} product={p} />)}
